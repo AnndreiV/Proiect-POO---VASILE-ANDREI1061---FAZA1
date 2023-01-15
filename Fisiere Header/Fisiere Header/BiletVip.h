@@ -1,0 +1,46 @@
+#pragma once
+#include<iostream>
+#include <string>
+#pragma warning(disable:4996)
+using namespace std;
+class BiletVip
+{
+private:
+	int id;
+	char* numeSpectator;
+	bool statusLoc;
+	string rand;
+	string loc;
+	static int nrBilete;
+	string numarTelefon;
+public:
+	BiletVip();
+	BiletVip(const char* numeSpectator, string numarTelefon, string rand, string loc);
+	BiletVip(const BiletVip& t);
+	~BiletVip();
+	string getRand();
+	string getLoc();
+	void setRand(string rand);
+	void setLoc(string loc);
+	int getId();
+	void setId(int id);
+	char* getNumeSpectator();
+	void setNumeSpectator(const char* numeSpectator);
+	bool getStatusLoc();
+	void setStatusLoc(bool statusLoc);
+	static int getNrBilete();
+	string getNumarTelefon();
+	void setNumarTelefon(string numarTelefon);
+	string AflaNumarTelefon(int id);
+	char* AflaNumeSpectator(int id);
+	BiletVip& operator=(const BiletVip& t);
+	friend ostream& operator<<(ostream& out, BiletVip t);
+	friend istream& operator>>(istream& in, BiletVip& t);
+	BiletVip& operator++();
+	BiletVip& operator++(int x);
+	bool operator!();
+	friend class DetaliiEveniment;
+};
+
+
+
